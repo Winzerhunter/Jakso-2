@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    document.writeln("<p>Tämä on JavaScript-ohjelma!</p>");
+
+    <!-- teht_2 -->
+    let nimi;
+    nimi = prompt("Anna nimesi");
+    document.write("Terve, " + nimi + "<br><br>");
+
+    <!-- teht_3 -->
+    let sade, ala, Pi;
+    Pi = Math.PI;
+    sade = prompt("Anna ympyrän säde");
+    ala = Pi * sade * sade;
+    document.write("Ympyräsi pinta-ala on, " + ala + "<br><br>");
+
+    <!-- teht_4 -->
+    let kanta, korkeus, piiri, ala_K;
+    kanta = prompt("Annna suorakulmion kannan");
+    korkeus = prompt("Anna suorakumion korkeus");
+    piiri = kanta * 2 + korkeus * 2;
+    ala_K = kanta * korkeus;
+    document.write("Suorakulmiosi piiri on: " + piiri + " ja pinta-ala: " + ala_K + "<br><br>");
+
+    <!-- teht_5 -->
+    let eka, toka, kolme, summa, tulo, Karvo;
+    eka = prompt("Anna eka numero");
+    toka = prompt("Anna toka numero");
+    kolme = prompt("Anna kolmas numero");
+    summa = +eka + +toka + +kolme;
+    tulo = eka * toka * kolme;
+    Karvo = summa / 3;
+    document.write("summa = " + summa + "<br>");
+    document.write("tulo = " + tulo + "<br>");
+    document.write("keskiarvo = " + Karvo + "<br><br>");
+
+    <!-- teht_6 -->
+    let liv, naula, luoti, Kg, g;
+    liv = prompt("Kuinka monta leiviskää");
+    naula = prompt("Kuinka monta naulaa");
+    luoti = prompt("Kuinka monta luotia");
+    g = 13.3*luoti + 13.3*32*naula + 13.3*640*liv;
+    Kg = Math.floor(g/1000);
+    g = g-Kg*1000;
+    function Financial(x) {
+      return Number.parseFloat(x).toFixed(2);
+    }
+    document.write("Massa nykymittojen mukaan: <br>" + Kg +" kilogrammaa ja " + Financial(g) + " grammaa. <br><br>");
+
+    <!-- teht_7 -->
+    let saldo, korko;
+    saldo = prompt("Anna saldosi");
+    korko = prompt("Anna vuosi korkosi");
+    saldo = +saldo + +saldo * +korko;
+    document.write("Tilisi saldo vuoden lopussa on: " + Financial(Math.round(saldo/0.05)*0.05) + "<br><br>");
+
+    <!-- teht_8 -->
+    let ekaN, tokaN, Nsumma;
+    ekaN = Math.floor(Math.random()* 6) + 1;
+    tokaN = Math.floor(Math.random()* 6) + 1;
+    Nsumma = +ekaN + +tokaN;
+    alert("Noppien silmäluvut: " + ekaN + " ja " + tokaN + "\nsimälukujen summa: " + Nsumma);
+
+    <!-- teht_9 -->
+    let k1, k2, k3, n1, n2, n3, n4;
+    k1 = Math.floor(Math.random()* 10);
+    k2 = Math.floor(Math.random()* 10);
+    k3 = Math.floor(Math.random()* 10);
+    n1 = Math.floor(Math.random()* 6) + 1;
+    n2 = Math.floor(Math.random()* 6) + 1;
+    n3 = Math.floor(Math.random()* 6) + 1;
+    n4 = Math.floor(Math.random()* 6) + 1;
+    document.write("Eka koodi: " + k1 + k2 + k3 + "<br>Toka koodi: " + n1 + n2 + n3 + n4);
+
+</script>
+</body>
+</html>
