@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let luku, kertoma;
+    kertoma = 1;
+    luku = prompt("Anna positiivinen kokonaisluku");
+    while (luku < 0){
+      luku = prompt("luku ei saa olla negativinen. Anna uusi luku");
+    };
+    for(i=luku; i>1; i--){
+      kertoma = kertoma*i;
+    };
+    document.write("Lukusi kertoma on: " + kertoma + "<br><br>");
+
+    <!-- teht_2 -->
+    let luku2, Njuuri;
+    luku2 = prompt("Anna positiivinen kokonaisluku");
+    while (luku2 < 0){
+      luku2 = prompt("luku ei saa olla negativinen. Anna uusi luku");
+    };
+    Njuuri = Math.sqrt(luku2);
+    document.write("Lukusi neliöjuuri on: " + Njuuri + "<br><br>");
+
+    <!-- teht_3 -->
+    let alkuV, loppuV, myUL, myLI, text;
+    alkuV = prompt("Anna aloitusvuosi.");
+    loppuV = prompt("Anna lopetusvuosi");
+
+    myUL = document.createElement("UL");
+    myUL.setAttribute("id", "myUL");
+    document.body.appendChild(myUL);
+
+    for (i = alkuV; i<=loppuV; i++) {
+      let vuosiK = i % 4;
+      if (vuosiK == 0) {
+        myLI = document.createElement("LI");
+        text = document.createTextNode(i);
+        myLI.appendChild(text);
+        document.getElementById("myUL").appendChild(myLI);
+      };
+    };
+    document.write("<br><br>");
+
+    <!-- teht_4 -->
+    let määrä;
+    määrä = prompt("Montako arpakuutiota heitetään?");
+    let summa = 0;
+    for (i=1; i<=määrä; i++){
+      let Sluku = Math.floor(Math.random()* 6) + 1;
+      summa = summa + Sluku;
+    }
+    document.write("Noppien silmälukujen summa on: " + summa + "<br><br>");
+
+    <!-- teht_5 -->
+    let luku5, Aluku;
+    luku5 = prompt("Anna luku");
+    Aluku = 1;
+    for (i=2; Aluku > 0; i++){
+      Aluku = luku5 % i;
+    }
+    if (++luku5 == i){
+      document.write("luku on alkuluku <br><br>")
+    }
+    else{
+      document.write("luku ei ole alkuluku <br><br>")
+    };
+
+    <!-- teht_6 -->
+    let Noppia, Hsumma, Nsumma, todnäk;
+    Noppia = prompt("kuinka monta noppaa heitetään?");
+    Hsumma = prompt("Mikä on toivottu silmälukujen summa");
+    Nsumma = 0;
+    todnäk = 0;
+    for (i=1; i<=10000; i++){
+      for (j=1; j<=Noppia; j++){
+        Nsumma = Nsumma + Math.floor(Math.random()* 6) + 1;
+      }
+      if(Nsumma == Hsumma){
+        todnäk++;
+      }
+      Nsumma = 0;
+    }
+    document.write("Todennäköisyys että saat haluamasi summa on noin " + todnäk/100 + "%<br><br>");
+
+    <!-- teht_7 -->
+    let kertaa = 1;
+    document.write("BINGO NUMEROT:<br>")
+    while (kertaa <= 25){
+      let ylä = 4*kertaa;
+      let ala = 4*kertaa-3;
+      let Bingo = Math.floor(Math.random() * (ylä - ala)) + ala;
+      kertaa++;
+      document.write(Bingo + "<br>");
+
+    }
+
+</script>
+</body>
+</html>
