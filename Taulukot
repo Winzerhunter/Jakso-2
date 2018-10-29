@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let taulukko1 = [1,2,3,4,5];
+  for (i=1; i<=5; i++){
+    taulukko1[i] = prompt("Anna luku " + i);
+  }
+
+  document.write("luvut vastakkaisessa järjestykessä:<br>");
+
+  for (j=5; j>=1; j--){
+    document.write(taulukko1[j] + "<br>");
+  }
+  document.write("<br>");
+
+  <!-- teht_2 -->
+  let maara,taulukko2,numerointi;
+  maara = prompt("Anna osallistujien lukumäärä");
+  taulukko2 = [];
+  numerointi = 1;
+
+  for (i=0; i<maara; i++) {
+    taulukko2[i] = prompt("Anna osaliistujan nimi");
+  }
+
+  document.write("Osallistujat järjestyksesä: <br>");
+  for (j=0; j<maara; j++){
+    document.write(numerointi + ". " + taulukko2[j] + "<br>");
+    numerointi++
+  }
+  document.write("<br>");
+
+  <!-- teht_3 -->
+  let Knimi,taulukko3;
+  taulukko3 = [];
+  for (i=0; i<=5; i++){
+    Knimi = prompt("Anna koiran nimi");
+    taulukko3[i] = Knimi;
+  }
+  taulukko3.sort();
+  document.write("Koirat aakkos järjestyksessä: <br>")
+  for (j=0; j<=5; j++){
+    document.write(taulukko3[j] + "<br>");
+  }
+  document.write("<br>");
+
+  <!-- teht_4 -->
+  let luku, taulukko4, maara4;
+  taulukko4 = [];
+  maara4 = 0;
+  luku = 1;
+
+  for (i=0; luku != 0; i++){
+    luku =prompt("Anna luku (lopetaaksesi anna 0)");
+    if (luku != 0){
+      taulukko4[i] = luku;
+      maara4++
+    }
+  }
+  taulukko4.sort(function(a, b){return a - b});
+  document.write("Luvut suuruus järjestyksessä: <br>");
+  for (j=0; j<maara4; j++){
+    document.write(taulukko4[j] + "<br>");
+  }
+  document.write("<br>");
+
+  <!-- teht_5 -->
+  let numero, taulukko5, totuus;
+  totuus = true;
+  taulukko5 = [];
+  for (i=0; totuus == true; i++){
+    numero = prompt("Anna luku 1 ja 1000 väliltä");
+    for (j=0; j<i; j++){
+      if(numero == taulukko5[j]){
+        totuus = false;
+        document.write("Annoit saman luvun kuin ennenkin. Ohjelma päätyy<br><br>");
+      }
+    }
+    taulukko5[i] = numero;
+  };
+
+  <!-- teht_6 -->
+  let lukuja, taulukko6, jako, maara6, mediaani;
+  taulukko6 = [];
+  lukuja = 1;
+  maara6 = 0;
+
+  for (i=0; lukuja != 0; i++){
+    lukuja =prompt("Anna luku (lopetaaksesi anna 0)");
+    if (lukuja != 0){
+      taulukko6[i] = lukuja;
+      maara6++
+    }
+  }
+  taulukko6.sort(function(a, b){return a - b});
+  document.write("Antamiesi lukujen mediaani:<br>");
+  jako = maara6 % 2;
+  if (jako == 1){
+    mediaani = +maara6/2-0.5;
+    document.write(taulukko6[mediaani]);
+  }
+  else if(jako == 0){
+    mediaani = (+taulukko6[maara6/2] + +taulukko6[maara6/2-1])/2;
+    document.write(mediaani);
+  }
+  document.write("<br><br>");
+
+  <!-- teht_7 -->
+  let taulukkoE, maaraE, maaraA, aani, max, maxIndex, jaettu, m, voittajat;
+  taulukkoE = [];
+  jaettu = [];
+  m=0;
+  voittajat = 1;
+  max = 0;
+
+  maaraE = prompt("Kuinka monta ehdokasta on ehdolla?");
+  maaraA = prompt("Kuinka monta äänestäjää on äänestämässä?");
+
+  for (j=0; j<maaraE; j++) {
+    taulukkoE[j] = 0;
+  }
+
+  for (i=1; i<=maaraA; i++){
+    aani = prompt("valitse yksi ehdokkaista 1 - " + maaraE);
+    taulukkoE[+aani-1] = +taulukkoE[+aani-1] + 1;
+  }
+
+  for (k = 1; k <= taulukkoE.length; k++) {
+    if (taulukkoE[k-1] > max) {
+      maxIndex = k;
+      max = taulukkoE[k-1];
+    }
+  }
+  document.write("Voittaja ehdokas on: " + maxIndex);
+
+</script>
+</body>
+</html>
