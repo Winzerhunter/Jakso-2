@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM tehtävä 5</title>
+</head>
+<body>
+    <p id="kello"></p>
+    <script>
+
+        function aika() {
+          var d = new Date();
+          var h = d.getHours();
+          var m = d.getMinutes();
+          var s = d.getSeconds();
+          document.getElementById("kello").innerHTML = "Kello on: " + h + ":" + m + ":" + s;
+        }
+        setInterval(aika, 1000);
+    </script>
+</body>
+</html>
