@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM tehtävä 4</title>
+    <link rel="stylesheet" href="css/css34.css">
+</head>
+<body>
+    <ul>
+        <!-- lisää lista tänne -->
+    </ul>
+    <script>
+      const myUl = document.querySelector("ul");
+      const newLi = [];
+
+      for (i=0; i<5; i++){
+        newLi[i] = document.createElement("li");
+        myUl.appendChild(newLi[i]);
+      }
+      for(j=1; j<6; j++) {
+        var newImg = document.createElement("IMG");
+        newImg.setAttribute("src", "http://placekitten.com/421/300");
+        var sLi = document.querySelector("ul li:nth-child(" + j + ")");
+        sLi.appendChild(newImg);
+      }
+    </script>
+</body>
+</html>
