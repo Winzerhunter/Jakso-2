@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM tehtävä 2</title>
+    <link href="css/teht2.css" rel="stylesheet">
+</head>
+<body>
+    <img id="eka" src="http://placekitten.com/420/300" alt="kuva 1" style="display: none;">
+    <br>
+    <img id="toka" src="http://placekitten.com/421/300" alt="kuva 2" class="hidden">
+    <script>
+        document.getElementById("eka").style = "display: block;";
+
+        document.querySelector("#toka").setAttribute("class", "show");
+    </script>
+</body>
+</html>
