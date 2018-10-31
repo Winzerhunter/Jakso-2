@@ -1,0 +1,6 @@
+ul{
+    list-style-type: none;
+}
+li:nth-of-type(odd){
+    background-color: gray;
+}
