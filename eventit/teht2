@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event tehtävä 2</title>
+    <link rel="stylesheet" href="teht2.css">
+</head>
+<body>
+    <img src="http://placekitten.com/491/391" alt="kissa" id="kuva">
+    <p class="hide">Tämä teksti näkyy, kun hiiri on kuvan päällä.</p>
+    <script>
+        const kuva = document.querySelector("img");
+        const text = document.querySelector("p");
+        function hover() {
+          text.setAttribute("class", "show");
+        }
+        function leave(){
+          text.setAttribute("class", "hide");
+        }
+        kuva.addEventListener("mouseenter", hover);
+        kuva.addEventListener("mouseleave", leave);
+
+    </script>
+</body>
+</html>
