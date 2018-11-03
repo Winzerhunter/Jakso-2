@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input name="numero1" id="num1">
+    <br>
+    <p>Jätä väli lasku merkin ja lukujen väliin</p>
+    <button id="suoritin">Suorita lasku</button>
+    <p id="vastaus"></p>
+    <script>
+        let luku1 = document.querySelector("#num1");
+        let suoritin = document.querySelector("#suoritin");
+        let tulos = document.querySelector("#vastaus");
+
+
+        function plussa() {
+          let osittelu = luku1.value.split(" ");
+          tulos.innerHTML = parseFloat(osittelu[0]) + parseFloat(osittelu[2]);
+        }
+        function miinus() {
+          let osittelu = luku1.value.split(" ");
+          tulos.innerHTML = parseFloat(osittelu[0]) - parseFloat(osittelu[2]);
+        }
+        function kerto() {
+          let osittelu = luku1.value.split(" ");
+          tulos.innerHTML = parseFloat(osittelu[0]) * parseFloat(osittelu[2]);
+        }
+        function jako() {
+          let osittelu = luku1.value.split(" ");
+          tulos.innerHTML = parseFloat(osittelu[0]) / parseFloat(osittelu[2]);
+        }
+        function valitsin(){
+          let osittelu = luku1.value.split(" ");
+          let merkki = osittelu[1];
+          if (merkki == "+"){
+            plussa();
+          }
+          else if (merkki == "-"){
+            miinus();
+          }
+          else if (merkki == "/"){
+            jako();
+          }
+          else if (merkki == "*"){
+            kerto();
+          }
+        }
+        suoritin.addEventListener("click", valitsin);
+    </script>
+</body>
+</html>
