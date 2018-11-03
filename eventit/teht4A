@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event tehtävä 4</title>
+</head>
+<body>
+    <!-- tulosta kuvakkeet tähän -->
+
+    <script>
+      let body = document.querySelector("body");
+      let kuvat = `<img id="eka" src="http://www.fillmurray.com/100/100"><img id="toka" src="http://lorempixel.com/100/100/sports/1/"><img id="vika" src="https://placeimg.com/100/100/tech"><div class="kuva"><img></div>`;
+      body.innerHTML = kuvat;
+
+
+      let tulostus = document.querySelector(".kuva");
+      let pieni1 = document.querySelector("#eka");
+      let pieni2 = document.querySelector("#toka");
+      let pieni3 = document.querySelector("#vika");
+      let iso1 = `<img src="http://www.fillmurray.com/640/480">`;
+      let iso2 = `<img src="http://lorempixel.com//640/480/sports/1/">`;
+      let iso3 = `<img src="https://placeimg.com/640/480/tech">`;
+
+      function inner1() {
+        tulostus.innerHTML = iso1;
+        tulostus.setAttribute("class", "visible");
+      }
+      function inner2() {
+        tulostus.innerHTML = iso2;
+        tulostus.setAttribute("class", "visible");
+      }
+      function inner3() {
+        tulostus.innerHTML = iso3;
+        tulostus.setAttribute("class", "visible");
+      }
+
+      pieni1.addEventListener("click", inner1);
+      pieni2.addEventListener("click", inner2);
+      pieni3.addEventListener("click", inner3);
+    </script>
+</body>
+</html>
