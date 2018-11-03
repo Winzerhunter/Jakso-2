@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event tehtävä 4</title>
+</head>
+<body>
+    <!-- tulosta kuvakkeet tähän -->
+    <div class="kuva">
+        <img>
+    </div>
+    <script>
+      let body = document.querySelector("body");
+      let kuva1 = document.createElement("IMG");
+      let kuva2 = document.createElement("IMG");
+      let kuva3 = document.createElement("IMG");
+      kuva1.src = "http://www.fillmurray.com/100/100";
+      kuva2.src = "http://lorempixel.com/100/100/sports/1/";
+      kuva3.src = "https://placeimg.com/100/100/tech";
+      kuva1.id = "eka";
+      kuva2.id = "toka";
+      kuva3.id = "vika";
+      body.insertBefore(kuva3, body.childNodes[0]);
+      body.insertBefore(kuva2, body.childNodes[0]);
+      body.insertBefore(kuva1, body.childNodes[0]);
+
+      let tulostus = document.querySelector(".kuva");
+      let pieni1 = document.querySelector("#eka");
+      let pieni2 = document.querySelector("#toka");
+      let pieni3 = document.querySelector("#vika");
+      let iso = document.querySelector("div > img");
+
+      function inner1() {
+        iso.src = "http://www.fillmurray.com/640/480";
+        tulostus.setAttribute("class", "visible");
+      }
+      function inner2() {
+        iso.src = "http://lorempixel.com//640/480/sports/1/";
+        tulostus.setAttribute("class", "visible");
+      }
+      function inner3() {
+        iso.src = "https://placeimg.com/640/480/tech";
+        tulostus.setAttribute("class", "visible");
+      }
+
+      pieni1.addEventListener("click", inner1);
+      pieni2.addEventListener("click", inner2);
+      pieni3.addEventListener("click", inner3);
+    </script>
+</body>
+</html>
