@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    const muunnos = () =>{
+      let gallonaa = prompt("Anna gallona määrä");
+      return "antamasi gallona määrä litroina on : " + gallonaa*3.785 + " litraa";
+    };
+
+    document.write(muunnos());
+
+</script>
+</body>
+</html>
+
+
+
+<!--                                     TEHT.2                                -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let gallonaa = prompt("Anna gallona määrä");
+
+  const muunnos = (a) => (a*3.785);
+
+  document.write("antamasi gallona määrä litroina on : " + muunnos(gallonaa) + " litraa");
+
+
+</script>
+</body>
+</html>
+
+
+
+<!--                                     TEHT.3                                -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let luku = prompt("Anna luku");
+
+    const itseisarvo = (a) => (Math.abs(a));
+
+    document.write("Anatamasi luvun itseisarvo on : " + itseisarvo(luku));
+
+</script>
+</body>
+</html>
+
+
+
+<!--                                     TEHT.4                                -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let luku1 = prompt("Anna ensimmäinen luku");
+    let luku2 = prompt("Anna toinen luku");
+    let luku3 = prompt("Anna kolmas luku");
+
+    const vertailu = (a,b,c) =>{
+      if (a<=b){
+        if (b<c){
+          return c;
+        }
+        else{
+          return b;
+        }
+      }
+      else{
+        return a;
+      }
+    };
+
+    document.write("Antamastasi luvuista suurion oli: " + vertailu(luku1, luku2, luku3));
+
+</script>
+</body>
+</html>
+
+
+
+<!--                                     TEHT.5                                -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let taulukko = [];
+    let maara = prompt("Kuinka monta sanaa on lauseessasi?");
+
+    for (i=1; i<=maara; i++){
+      taulukko[i-1] = prompt("Anna lauseen " + i + ". sana");
+    }
+
+    const liitä = (a) =>{
+      let lause = a[0];
+      for (j=1; j<a.length; j++){
+        lause = lause + " " +a[j];
+      }
+      return lause;
+    };
+
+    document.write("Lauseesi oli: " + liitä(taulukko));
+</script>
+</body>
+</html>
+
+
+
+<!--                                     TEHT.6                                -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let taulukko = [];
+    let maara = prompt("Kuinka monta luku haluat antaa?");
+
+    for (i=1; i<=maara; i++){
+      taulukko[i-1] = prompt("Anna taulukon " + i + ". luku");
+    }
+
+    const vastaluvuksi = (a) =>{
+      for (j=0; j<a.length; j++){
+        if (a[j] < 0){
+          a[j] = Math.abs(a[j]);
+        }
+        else if (a[j] > 0){
+          a[j] = -a[j];
+        }
+      }
+    };
+
+    vastaluvuksi(taulukko);
+    document.write("Taulukkosi lukujen vastaluvut ovat:<br>");
+    for (k=0; k<taulukko.length; k++){
+      document.write(taulukko[k] + "<br>");
+    }
+</script>
+</body>
+</html>
+
+
+
+<!--                                     TEHT.7                                -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let taulukko = [];
+    let maara = prompt("Kuinka monta luku haluat antaa?");
+
+    for (i=1; i<=maara; i++){
+      taulukko[i-1] = prompt("Anna taulukon " + i + ". luku");
+    }
+
+    const parilliset = (a) =>{
+      let jäljellä = [];
+      let Pmaara = 0;
+      for (j=0; j<a.length; j++){
+        let jako = a[j]%2;
+        if(jako == 0){
+          jäljellä[Pmaara] = a[j];
+          Pmaara++
+        }
+      }
+      return jäljellä;
+    };
+
+    document.write("Taulukkosi parilliset luvut olivat: " + parilliset(taulukko) + "<br>");
+
+
+
+</script>
+</body>
+</html>
+
+
+
+<!--                                     TEHT.8                                -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let monesko = prompt("Monenneko Fibonaccin lukujonossa ensiintyvän luvun haluat?")
+
+    const Fibo = (a) => {
+      if (a == 0) {
+        return 0;
+      }
+      else if(a == 1){
+        return 1;
+      }
+      else {
+        return Fibo(a - 1) + Fibo(a - 2);
+      }
+    };
+
+    document.write(Fibo(monesko));
+</script>
+</body>
+</html>
