@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    h1{
+        font-size: 3em;
+        margin-bottom: -0.5%;
+        margin-top: 5%;
+    }
+    .kuva{
+        float: left;
+    }
+    .summary{
+        float: left;
+        width: 45%;
+        margin-top: 0;
+        margin-left: 1%;
+        overflow: auto;
+        height: 380px;
+        background-image: url("dark-grunge-background-for-text-and-titles_vmmz5fxyl__F0000.png");
+        color: white;
+        padding: 1%;
+
+    }
+    .stoppi{
+        clear: both;
+    }
+    a{
+        padding-left: 22.5%;
+    }
+    body{
+        background-image: url("wall-leaves-wooden-207301.jpg");
+        margin-left: 15%;
+    }
+    #hakupalkki{
+        background-image: url("images.jpg");
+        width: 70%;
+        height: 15%;
+        margin-bottom: 2%;
+    }
+    #hakutulokset{
+        padding-left: 10%;
+        width: 60%;
+        background-image: url("images.jpg");
+        min-height: 800px;
+        padding-bottom: 30px;
+    }
+    .genret{
+        max-width: 20%;
+        position: absolute;
+        margin-top: -6%;
+        font-size: 1.2em;
+    }
+    .genreO{
+        width: 19%;
+        font-size: 1.2em;
+    }
+</style>
+<body>
+    <div id="hakupalkki">
+    <p>Search:</p>
+    <input id="hakuteksti" type="text">
+    <button id="hakunappi">hae</button>
+    </div>
+
+    <div id="hakutulokset">
+
+    </div>
+
+<script>
+    let nappi = document.querySelector("#hakunappi");
+
+    function etsi(){
+      let inputti = document.querySelector("#hakuteksti").value;
+      fetch("http://api.tvmaze.com/search/shows?q=" +inputti).then(function(vastaus) {
+        return vastaus.json();
+      }).then(function(json) {
+        tallennus(json);
+      }).catch(function(error) {
+        console.log(error);
+      })
+    }
+    function tallennus(infoa){
+      /**
+       * @property {string} medium
+       * @property {string} show
+       * @property {string} genres
+       */
+      let tulostus = document.querySelector("#hakutulokset");
+      tulostus.innerHTML = "";
+      console.log(infoa.length);
+      for (i=0; i<infoa.length; i++){
+        const saatunimi = infoa[i].show.name;
+        const saatulinkki = infoa[i].show.url;
+        const saatukuva = infoa[i].show.image.medium;
+        const saatuYveto = infoa[i].show.summary;
+        const saatugenre = infoa[i].show.genres;
+
+        console.log(saatugenre.length);
+        let divi1 = document.createElement("h1");
+        divi1.setAttribute("class", "nimi");
+        tulostus.appendChild(divi1);
+        let infot1 = document.createTextNode(saatunimi);
+        divi1.appendChild(infot1);
+
+        let divi3 = document.createElement("img");
+        divi3.setAttribute("class", "kuva");
+        tulostus.appendChild(divi3);
+        divi3.setAttribute("src", saatukuva);
+
+        let divi4 = document.createElement("p");
+        divi4.setAttribute("class", "summary");
+        tulostus.appendChild(divi4);
+        divi4.innerHTML = saatuYveto;
+
+        let divi5 = document.createElement("div");
+        divi5.setAttribute("class", "stoppi");
+        tulostus.appendChild(divi5);
+
+        let divi6 = document.createElement("div");
+        divi6.setAttribute("class", "genret");
+        tulostus.appendChild(divi6);
+        let genreO = document.createElement("div");
+        genreO.setAttribute("class", "genreO");
+        let genreT = document.createTextNode("Genres: ");
+        genreO.appendChild(genreT)
+        divi6.appendChild(genreO);
+        for (j=0; j<saatugenre.length; j++){
+          let infoa6 = document.createTextNode(saatugenre[j]);
+          divi6.appendChild(infoa6);
+          let rivinvaihto = document.createTextNode(",\n");
+          divi6.appendChild(rivinvaihto);
+        }
+
+        let divi2 = document.createElement("a");
+        divi2.setAttribute("class", "linkki");
+        tulostus.appendChild(divi2);
+        let infot2 = document.createTextNode(saatulinkki);
+        divi2.appendChild(infot2);
+        divi2.setAttribute("href", saatulinkki);
+
+
+      }
+    }
+
+    nappi.addEventListener("click", etsi);
+</script>
+</body>
+</html>
