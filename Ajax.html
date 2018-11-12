@@ -88,12 +88,13 @@
        * @property {string} medium
        * @property {string} show
        * @property {string} genres
+       * @property {string} officialSite
        */
       let tulostus = document.querySelector("#hakutulokset");
       tulostus.innerHTML = "";
       for (i=0; i<infoa.length; i++){
         const saatunimi = infoa[i].show.name;
-        const saatulinkki = infoa[i].show.url;
+        const saatulinkki = infoa[i].show.officialSite;
         const saatukuva = infoa[i].show.image.medium;
         const saatuYveto = infoa[i].show.summary;
         const saatugenre = infoa[i].show.genres;
