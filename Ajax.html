@@ -91,7 +91,6 @@
        */
       let tulostus = document.querySelector("#hakutulokset");
       tulostus.innerHTML = "";
-      console.log(infoa.length);
       for (i=0; i<infoa.length; i++){
         const saatunimi = infoa[i].show.name;
         const saatulinkki = infoa[i].show.url;
@@ -99,7 +98,12 @@
         const saatuYveto = infoa[i].show.summary;
         const saatugenre = infoa[i].show.genres;
 
-        console.log(saatugenre.length);
+        console.log(saatunimi);
+        console.log(saatulinkki);
+        console.log(saatukuva);
+        console.log(saatuYveto);
+        console.log(saatugenre);
+
         let divi1 = document.createElement("h1");
         divi1.setAttribute("class", "nimi");
         tulostus.appendChild(divi1);
