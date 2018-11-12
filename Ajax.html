@@ -105,48 +105,53 @@
         console.log(saatuYveto);
         console.log(saatugenre);
 
-        let divi1 = document.createElement("h1");
-        divi1.setAttribute("class", "nimi");
-        tulostus.appendChild(divi1);
-        let infot1 = document.createTextNode(saatunimi);
-        divi1.appendChild(infot1);
-
-        let divi3 = document.createElement("img");
-        divi3.setAttribute("class", "kuva");
-        tulostus.appendChild(divi3);
-        divi3.setAttribute("src", saatukuva);
-
-        let divi4 = document.createElement("p");
-        divi4.setAttribute("class", "summary");
-        tulostus.appendChild(divi4);
-        divi4.innerHTML = saatuYveto;
-
-        let divi5 = document.createElement("div");
-        divi5.setAttribute("class", "stoppi");
-        tulostus.appendChild(divi5);
-
-        let divi6 = document.createElement("div");
-        divi6.setAttribute("class", "genret");
-        tulostus.appendChild(divi6);
-        let genreO = document.createElement("div");
-        genreO.setAttribute("class", "genreO");
-        let genreT = document.createTextNode("Genres: ");
-        genreO.appendChild(genreT)
-        divi6.appendChild(genreO);
-        for (j=0; j<saatugenre.length; j++){
-          let infoa6 = document.createTextNode(saatugenre[j]);
-          divi6.appendChild(infoa6);
-          let rivinvaihto = document.createTextNode(",\n");
-          divi6.appendChild(rivinvaihto);
+        if(saatunimi != null) {
+          let divi1 = document.createElement("h1");
+          divi1.setAttribute("class", "nimi");
+          tulostus.appendChild(divi1);
+          let infot1 = document.createTextNode(saatunimi);
+          divi1.appendChild(infot1);
         }
+        if(saatukuva != null) {
+          let divi3 = document.createElement("img");
+          divi3.setAttribute("class", "kuva");
+          tulostus.appendChild(divi3);
+          divi3.setAttribute("src", saatukuva);
+        }
+        if(saatuYveto != null) {
+          let divi4 = document.createElement("p");
+          divi4.setAttribute("class", "summary");
+          tulostus.appendChild(divi4);
+          divi4.innerHTML = saatuYveto;
 
-        let divi2 = document.createElement("a");
-        divi2.setAttribute("class", "linkki");
-        tulostus.appendChild(divi2);
-        let infot2 = document.createTextNode(saatulinkki);
-        divi2.appendChild(infot2);
-        divi2.setAttribute("href", saatulinkki);
-
+          let divi5 = document.createElement("div");
+          divi5.setAttribute("class", "stoppi");
+          tulostus.appendChild(divi5);
+        }
+        if(saatugenre != null) {
+          let divi6 = document.createElement("div");
+          divi6.setAttribute("class", "genret");
+          tulostus.appendChild(divi6);
+          let genreO = document.createElement("div");
+          genreO.setAttribute("class", "genreO");
+          let genreT = document.createTextNode("Genres: ");
+          genreO.appendChild(genreT)
+          divi6.appendChild(genreO);
+          for (j = 0; j < saatugenre.length; j++) {
+            let infoa6 = document.createTextNode(saatugenre[j]);
+            divi6.appendChild(infoa6);
+            let rivinvaihto = document.createTextNode(",\n");
+            divi6.appendChild(rivinvaihto);
+          }
+        }
+        if(saatulinkki != null) {
+          let divi2 = document.createElement("a");
+          divi2.setAttribute("class", "linkki");
+          tulostus.appendChild(divi2);
+          let infot2 = document.createTextNode(saatulinkki);
+          divi2.appendChild(infot2);
+          divi2.setAttribute("href", saatulinkki);
+        }
 
       }
     }
