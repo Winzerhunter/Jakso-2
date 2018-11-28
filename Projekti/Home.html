@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bäkkäri</title>
+    <link href="Style.css" rel="stylesheet">
+</head>
+<body>
+<!-- FILTTERI -->
+<div class="hidden" id="filtteri">
+    <button class="filter"></button>
+</div>
+<div class="hidden" id="filtteri2">
+    <button class="filter"></button>
+</div>
+
+<!-- ETUSIVU -->
+<h1>BÄKKÄRI</h1>
+<button class="etu_blokki" id="etsi">
+<p>Search</p>
+</button>
+<button class="etu_blokki" id="lisää">
+<p>Upload</p>
+</button>
+
+<!-- POPUP -->
+<div class="Popup hidden" id="EPopup">
+    <button class="close" id="Eclose">x</button>
+    <button id="Random">Random</button>
+    <p id="Choose" >Choose a category</p>
+    <button id="Dropdown_button">&#x2794;</button>
+    <div id="Dropdown_menu" class="hidden">
+        <button id="City">City</button>
+        <button id="Landscape">Landscape</button>
+        <button id="Fantasy">Fantasy</button>
+    </div>
+    <button id="PicSearch">Search</button>
+    <div id="PicScreen">
+
+    </div>
+</div>
+<div class="Popup hidden" id="LPopup">
+    <button class="close" id="Lclose">x</button>
+    <form id="mediaform" action="/upload">
+        <input type="file" name="mediafile" accept="image/*" onchange="loadImage(event)" id="Choose_file">
+        <br>
+        <img src="" id="Preview">
+        <br>
+        <div id="Category">
+            <h2>Category:</h2>
+            <div id="Categories">
+                <input type="radio" name="Category" value="Humanoid"> Fantasy <br>
+                <input type="radio" name="Category" value="Landscape"> Landscape <br>
+                <input type="radio" name="Category" value="City"> City <br>
+                <input type="radio" name="Category" value="City"> City <br>
+                <input type="radio" name="Category" value="City"> City <br>
+                <input type="radio" name="Category" value="City"> City <br>
+                <input type="radio" name="Category" value="City"> City <br>
+            </div>
+        </div>
+        <input type="submit" value="Upload" id="Submit_upload">
+    </form>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
