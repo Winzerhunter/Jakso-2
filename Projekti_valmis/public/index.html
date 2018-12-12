@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bäkkäri</title>
+    <link href="Style.css" rel="stylesheet">
+</head>
+<body>
+<!-- FILTTERI -->
+<div class="hidden" id="filtteri">
+    <button class="filter"></button>
+</div>
+<div class="hidden" id="filtteri2">
+    <button class="filter"></button>
+</div>
+
+<!-- ETUSIVU -->
+<h1>BÄKKÄRI</h1>
+<button class="etu_blokki" id="etsi">
+    <p>Search</p>
+</button>
+<button class="etu_blokki" id="lisää">
+    <p>Upload</p>
+</button>
+
+<!-- POPUP -->
+<div class="Popup hidden" id="EPopup">
+    <button class="close" id="Eclose">x</button>
+    <form id="mediaform2" action="/rand">
+        <button id="Random" type="submit"> random </button>
+    </form>
+        <div id="Choose">Choose a category</div>
+        <button id="Dropdown_button">&#x2794;</button>
+        <div id="Dropdown_menu" class="hidden">
+            <button id="City">City</button>
+            <button id="Landscape">Landscape</button>
+            <button id="Fantasy">Fantasy</button>
+        </div>
+    <form id="mediaform3" action="">
+        <button id="PicSearch" type="submit">Search</button>
+    </form>
+        <div id="PicScreen">
+
+        </div>
+</div>
+<div class="Popup hidden" id="LPopup">
+    <button class="close" id="Lclose">x</button>
+    <form id="mediaform" action="/upload" enctype="multipart/form-data" method="post">
+        <div id="Category_block">
+            <h2>Category:</h2>
+            <div id="Categories">
+                <label><input type="radio" name="Category" value="Fantasy" checked> Fantasy </label><br>
+                <label><input type="radio" name="Category" value="Landscape"> Landscape </label><br>
+                <label><input type="radio" name="Category" value="City"> City </label><br>
+            </div>
+        </div>
+        <input type="file" name="mediafile" accept="image/*" onchange="loadImage" id="Choose_file">
+        <img src="" id="Preview">
+        <button type="submit" id="Submit_upload">Upload</button>
+    </form>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
