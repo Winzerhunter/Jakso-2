@@ -1,0 +1,223 @@
+body, html{
+    position: relative;
+    height: 100%;
+    margin: 0;
+    background-image: url("the-most-famous-windows-wallpaper-ever-turns-20-505668-2.jpg");
+    background-size: cover;
+}
+.etu_blokki{
+    height: 15%;
+    width: 20%;
+    position: absolute;
+    border-style: solid;
+    border-color: green;
+    border-radius: 10px;
+
+}
+.hover{
+    background-image: url("PleasantSelfassuredCurlew-size_restricted.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-color: green;
+    box-shadow: 0 0 500px green;
+}
+h1{
+    text-align: center;
+    font-size: 7em;
+    margin: 0;
+    color: white;
+    font-family: Impact;
+    text-shadow: 0 0 3px black;
+}
+h2{
+    margin: 0%;
+}
+p, button{
+    overflow: hidden;
+}
+.etu_blokki > p{
+    font-size: 2em;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    color: green;
+    font-family: Impact;
+}
+#etsi{
+    top: 40%;
+    left: 20%;
+}
+#lisää{
+    top: 40%;
+    left: 60%;
+}
+.hidden{
+    visibility: hidden;
+}
+.show{
+    visibility: visible;
+}
+
+/*
+=== UPLOAD POPUP ===
+ */
+.Popup{
+    position: absolute;
+    top: 7.5%;
+    left: 7.5%;
+    height: 85%;
+    width: 85%;
+    background-image: url("white.jpg");
+    border-radius: 20px;
+}
+.close{
+    position: absolute;
+    top: 0.4%;
+    right: 0.7%;
+    background-image: url("white.jpg");
+    border: none;
+    font-size: 1.7em;
+}
+#Preview{
+    position: absolute;
+    max-height: 80%;
+    max-width: 95%;
+    margin-top: 1%;
+    left: 1%;
+}
+#Category_block{
+    position: absolute;
+    top: 85%;
+    width: 20%;
+    height: 10%;
+    left: 1%;
+}
+#Categories{
+    margin-left: 5%;
+    max-height: 100%;
+    width: 70%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+#Submit_upload{
+    position: absolute;
+    top: 90%;
+    left: 53.5%;
+    width: 15%;
+    height: 7%;
+}
+#Choose_file{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    width: 15%;
+    height: 4%;
+}
+
+/*
+=== SEARCH POPUP ===
+*/
+#Random{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    box-sizing: border-box;
+    width: 7%;
+    height: 2.5%;
+}
+#Choose{
+    border-style: solid;
+    border-width: 1px;
+    position: absolute;
+    top: 1%;
+    left: 10%;
+    margin: 0;
+    box-sizing: border-box;
+    height: 2.5%;
+    width: 15%;
+}
+#PicSearch{
+    position: absolute;
+    left: 10%;
+    top: 3.5%;
+    box-sizing: border-box;
+    height: 2.5%;
+    width: 7%;
+}
+#Dropdown_button{
+    position: absolute;
+    top: 1%;
+    left: 22.5%;
+    box-sizing: border-box;
+    height: 2.5%;
+    width: 2.5%;
+}
+#Dropdown_menu{
+    position: absolute;
+    top: 1%;
+    left: 25%;
+    width: 10%;
+    height: 10%;
+    overflow: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    border-width: 1px;
+}
+#Dropdown_menu > button{
+    border: none;
+    width: 100%;
+    padding: 1px;
+}
+#Dropdown_menu > button:nth-child(odd){
+    background-color: gray;
+}
+#PicScreen{
+    position: absolute;
+    top: 8%;
+    left: 1%;
+    border-width: 1px;
+    width: 98%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+#PicScreen > div{
+    width: 30%;
+    height: 50%;
+    margin: 1%;
+
+}
+div > img{
+    width: 100%;
+    height: 90%;
+}
+.liket{
+    display: inline;
+    font-size: 1.3em;
+}
+.thumb{
+    height: 1em;
+    margin-left: 2%;
+    display: inline-flex;
+    background-color: green;
+}
+
+/*
+=== HOVER FILTTERI ===
+*/
+.filter{
+    position: absolute;
+    border: 0;
+    background-color: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+}
+.hoverE{
+    border: 0;
+    background-color: rgba(0,0,0,0.2);
+}
+p.hoverE{
+    color: black;
+    background-color: rgba(0,0,0,0);
+}
