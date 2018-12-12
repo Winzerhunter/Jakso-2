@@ -1,0 +1,101 @@
+const connect = () => {
+// get the client
+  const mysql = require('mysql2');
+
+// create the connection to database
+  const connection = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    database: 'nikowi',
+    password: process.env.DB_PASS,
+  });
+  return connection;
+};
+
+const select = (connection, callback, res) => {
+  // simple query
+  connection.query(
+      'SELECT filename, likes FROM `projekti`;',
+      (err, results, fields) => {
+        // console.log(results); // results contains rows returned by server
+        // console.log(fields); // fields contains extra meta data about results, if available
+        // console.log(err);
+        callback(results, res);
+      },
+  );
+};
+
+const selectF = (connection, callback, res) => {
+  // simple query
+  connection.query(
+      'SELECT filename, likes FROM `projekti` WHERE category = "Fantasy" ;',
+      (err, results, fields) => {
+        // console.log(results); // results contains rows returned by server
+        // console.log(fields); // fields contains extra meta data about results, if available
+        // console.log(err);
+        callback(results, res);
+      },
+  );
+};
+
+const selectL = (connection, callback, res) => {
+  // simple query
+  connection.query(
+      'SELECT filename, likes FROM `projekti` WHERE category = "Landscape" ;',
+      (err, results, fields) => {
+        // console.log(results); // results contains rows returned by server
+        // console.log(fields); // fields contains extra meta data about results, if available
+        // console.log(err);
+        callback(results, res);
+      },
+  );
+};
+
+const selectC = (connection, callback, res) => {
+  // simple query
+  connection.query(
+      'SELECT filename, likes FROM `projekti` WHERE category = "City" ;',
+      (err, results, fields) => {
+        // console.log(results); // results contains rows returned by server
+        // console.log(fields); // fields contains extra meta data about results, if available
+        // console.log(err);
+        callback(results, res);
+      },
+  );
+};
+
+const insert = (data, connection, callback) => {
+  // simple query
+  connection.execute(
+      'INSERT INTO projekti (filename, mimetype, category) VALUES (?, ?, ?);',
+      data,
+      (err, results, fields) => {
+        //console.log(results); // results contains rows returned by server
+        //console.log(fields); // fields contains extra meta data about results, if available
+        //console.log(err);
+        callback();
+      },
+  );
+};
+const update = (data, connection) => {
+  // simple query
+  return connection.execute(
+      'UPDATE projekti SET likes = ? where filename = ?;',
+      data,
+      (err, results, fields) => {
+        // console.log(results); // results contains rows returned by server
+        // console.log(fields); // fields contains extra meta data about results, if available
+        console.log(err);
+      },
+  );
+};
+
+module.exports = {
+  connect: connect,
+  select: select,
+  insert: insert,
+  selectC: selectC,
+  selectF: selectF,
+  selectL: selectL,
+  update: update,
+};
